@@ -1,0 +1,24 @@
+# Connection Expectant Network
+Idea here is based mainly on the idea of Delay Tolerant Networks mixed with insights gathered from looking at Fidonet.
+
+Concepts here are different in the modern world for several reasons:
+1. We don't have Ma-Bell keeping things in such a good working order.
+2. Some of us live in a world where we can't trust the Ma-Bell or similar providers to deliver our data as a common carrier.
+3. While point to point is still heavily used in most modernized networks the most common _desired_ network architecture is that of an AdHoc meshing network.
+4. "Connection Reset by Missle" is actually a thing now.
+
+RF mesh networks are usually considered common medium. While channelization is possible and even recommended that doesn't leave a lot of space in the bandwidth when lots of people want to talk simultaneously.
+What is desired in general:
+1. minimum, to no, on air time for the recieving station
+2. minimum power and time on air for the transmitting stations.
+3. Ability to have mobile transmitters and recievers such that "Connection Reset by Missle" is more difficult to achieve.
+
+Information contained in bundles should be entirely self-describing:
+1. bundles should be able to arbitrarily and on-the-fly be concatenated and split into sub-bundles. (Ideally in the middle of a transmission.)
+2. Bundles should be able to both contain full messages and sub-messages of varying priority in the same unit.
+3. Bundled packets should have some minimum FEC such that loss of a small percentage of the packets between the reciever and the network doesn't result in the loss of the packets.
+4. High priority packets in a bundle should, if possible, be delivered as a single unit.
+5. Bundles should be able to contain messgaes that aren't all destined for the same node.
+5.1. Bundles should be introspectable such that bundles on the same node can be opened and checked for messages in an effort to bundle messages destined to the same area of the network can be rebundled at nearly every stage.
+
+
